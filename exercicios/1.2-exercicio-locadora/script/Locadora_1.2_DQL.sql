@@ -1,0 +1,56 @@
+INSERT INTO EMPRESA (nomeEmpresa)
+VALUES ('CARROS'),('CARROS2');
+GO
+
+SELECT * FROM EMPRESA 
+
+INSERT INTO VEICULO(idEmpresa,placaVeiculo)
+VALUES (1,'2909'),(2,'1111');
+GO
+
+SELECT * FROM VEICULO
+
+INSERT INTO MODELO (idVeiculo,nomeModelo)
+VALUES (3,'Gol'),(4,'Uno');
+GO
+
+SELECT * FROM MODELO
+
+INSERT INTO MARCA (idModelo,nomeMarca)
+VALUES (1,'Fiat'),(2,'VW');
+GO
+
+SELECT * FROM MARCA
+
+INSERT INTO ALUGUEL (idVeiculo,dataAluguel)
+VALUES (3,'01/02'),(4,'03/03');
+GO
+
+SELECT * FROM ALUGUEL
+
+INSERT INTO CLIENTE (idAluguel,nomeCliente,cpfCliente)
+VALUES(1,'Nathalia','111111111'),(2,'Maria','2222222222')
+GO
+
+SELECT * FROM CLIENTE
+SELECT * FROM ALUGUEL
+SELECT * FROM MARCA
+SELECT * FROM MODELO
+SELECT * FROM VEICULO
+SELECT * FROM EMPRESA
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

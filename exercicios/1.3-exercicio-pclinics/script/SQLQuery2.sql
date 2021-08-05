@@ -1,0 +1,16 @@
+INSERT INTO GENERO (nomeGenero)
+VALUES ('AÇÃO'),('ROMANCE');
+GO
+
+SELECT * FROM GENERO
+
+DELETE FROM GENERO 
+WHERE idGenero = 3
+
+
+INSERT INTO FILME (tituloFilme,idGenero)
+VALUES ('Rambo',1), ('Vingadores',1),
+('GHOST',4),('DIARIO DE UMA PAIXÃO',4)
+GO
+
+SELECT * FROM FILME
