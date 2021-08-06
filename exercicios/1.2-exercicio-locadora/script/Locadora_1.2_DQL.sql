@@ -1,35 +1,4 @@
-INSERT INTO EMPRESA (nomeEmpresa)
-VALUES ('CARROS'),('CARROS2');
-GO
-
-SELECT * FROM EMPRESA 
-
-INSERT INTO VEICULO(idEmpresa,placaVeiculo)
-VALUES (1,'2909'),(2,'1111');
-GO
-
-SELECT * FROM VEICULO
-
-INSERT INTO MODELO (idVeiculo,nomeModelo)
-VALUES (3,'Gol'),(4,'Uno');
-GO
-
-SELECT * FROM MODELO
-
-INSERT INTO MARCA (idModelo,nomeMarca)
-VALUES (1,'Fiat'),(2,'VW');
-GO
-
-SELECT * FROM MARCA
-
-INSERT INTO ALUGUEL (idVeiculo,dataAluguel)
-VALUES (3,'01/02'),(4,'03/03');
-GO
-
-SELECT * FROM ALUGUEL
-
-INSERT INTO CLIENTE (idAluguel,nomeCliente,cpfCliente)
-VALUES(1,'Nathalia','111111111'),(2,'Maria','2222222222')
+USE LOCADORA_N
 GO
 
 SELECT * FROM CLIENTE
@@ -39,18 +8,27 @@ SELECT * FROM MODELO
 SELECT * FROM VEICULO
 SELECT * FROM EMPRESA
 
+-- SELECT UTILIZANDO JOIN->
+
+-- listar todos os alugueis mostrando as datas de início e fim, o nome do cliente que alugou e nome do modelo do carro
+
+SELECT IdAluguel, nomeCliente, nomeModelo, placaVeiculo,dataAluguel , dataDevolucao  FROM ALUGUEL
+LEFT JOIN VEICULO
+ON VEICULO.IdVeiculo = ALUGUEL.IdVeiculo
+INNER JOIN MODELO
+ON MODELO.IdModelo = veiculo.IdModelo
+LEFT JOIN CLIENTE
+ON CLIENTE.IdCliente = ALUGUEL.IdCliente
 
 
 
+-- listar os alugueis de um determinado cliente mostrando seu nome, as datas de início e fim e o nome do modelo do carro
 
-
-
-
-
-
-
-
-
-
-
-
+SELECT IdAluguel, nomeCliente, nomeModelo, placaVeiculo,dataAluguel , dataDevolucao  FROM ALUGUEL
+LEFT JOIN VEICULO
+ON VEICULO.IdVeiculo = ALUGUEL.IdVeiculo
+INNER JOIN MODELO
+ON MODELO.IdModelo = veiculo.IdModelo
+LEFT JOIN CLIENTE
+ON CLIENTE.IdCliente = ALUGUEL.IdCliente
+WHERE nomeCliente = 'Nathalia'
