@@ -43,13 +43,17 @@ ON Dono.IdDono = PET.IdDono
 SELECT IdAtendimento,nomeVeterinario,nomePet,nomeRaca, nomeTipo,nomeDono,nomeClinica  FROM ATENDIMENTO
 LEFT JOIN VETERINARIO
 ON ATENDIMENTO.IdVeterinario = VETERINARIO.IdVeterinario
+INNER JOIN PET
+ON ATENDIMENTO.IdPet = pet.IdPet
+INNER JOIN RACA
+ON PET.IdRaca = RACA.IdRaca
+INNER JOIN TIPO
+ON RACA.IdTipo = TIPO.IdTipo
+INNER JOIN dono
+ON PET.IdDono = Dono.IdDono
 LEFT JOIN CLINICA
 ON veterinario.IdClinica = clinica.IdClinica
-LEFT JOIN PET
-ON ATENDIMENTO.IdPet = pet.IdPet
-LEFT JOIN RACA
-ON PET.IdRaca = RACA.IdRaca
-LEFT JOIN TIPO
-ON RACA.IdTipo = TIPO.IdTipo
-LEFT JOIN dono
-ON PET.IdDono = Dono.IdDono
+
+
+
+
