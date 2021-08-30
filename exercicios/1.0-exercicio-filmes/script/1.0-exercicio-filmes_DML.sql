@@ -1,14 +1,20 @@
-USE catalogo;
+USE CATALOGO_T;
 GO 
 
 INSERT INTO GENERO (nomeGenero)
-VALUES ('AÇÃO'), ('ROMANCE');
+VALUES ('AÇÃO'), ('ROMANCE'), ('AVENTURA'), ('TERROR');
 GO 
 
-INSERT INTO FILME (tituloFilme,idGenero)
+INSERT INTO FILME (tituloFilme, idGenero)
 VALUES ('Rambo',1), ('Vingadores',1),
-       ('GHOST',3), ('DIARIO DE UMA PAIXAO',3);
+       ('Ghost',2), ('Dário de uma paixão',2),
+	   ('HER', null), ('Homem-Aranha', null);
 GO
+
+-- OUTRA FORMA, COM OUTRO INSERT
+--INSERT INTO FILME (tituloFilme)
+--VALUES ('HER'), ('Homem-Aranha');
+--GO
  
 
 update FILME SET tituloFilme = 'RAMBO 2' 
